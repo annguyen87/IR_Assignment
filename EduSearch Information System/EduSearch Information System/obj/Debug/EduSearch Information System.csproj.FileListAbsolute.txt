@@ -1,0 +1,11 @@
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe.config
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.pdb
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csprojResolveAssemblyReference.cache
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Form1.resources
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Properties.Resources.resources
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csproj.GenerateResource.Cache
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.exe
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.pdb
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.dll
+c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.pdb
