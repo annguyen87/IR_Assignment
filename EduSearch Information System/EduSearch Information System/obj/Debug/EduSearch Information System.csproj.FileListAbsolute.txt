@@ -33,3 +33,16 @@ C:\Users\n8635307\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch In
 C:\Users\n8635307\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.dll
 C:\Users\n8635307\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.pdb
 C:\Users\n8635307\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.Contrib.Snowball.pdb
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe.config
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.exe
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.pdb
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csprojResolveAssemblyReference.cache
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Form1.resources
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Properties.Resources.resources
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csproj.GenerateResource.Cache
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.pdb
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.Contrib.Snowball.dll
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.dll
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.pdb
+C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.Contrib.Snowball.pdb

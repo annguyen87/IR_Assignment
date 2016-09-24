@@ -41,13 +41,13 @@
             this.listView = new System.Windows.Forms.ListView();
             this.Rank = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Bibliographic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Abstract = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SearchTimeExcutionLabel = new System.Windows.Forms.Label();
             this.InformationNeedButton = new System.Windows.Forms.Button();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.totalresultLabel = new System.Windows.Forms.Label();
-            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Bibliographic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Abstract = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
@@ -150,6 +150,18 @@
             this.Title.Text = "Title";
             this.Title.Width = 150;
             // 
+            // Author
+            // 
+            this.Author.Text = "Author";
+            // 
+            // Bibliographic
+            // 
+            this.Bibliographic.Text = "Bibliographic";
+            // 
+            // Abstract
+            // 
+            this.Abstract.Text = "Abstract";
+            // 
             // SearchTimeExcutionLabel
             // 
             this.SearchTimeExcutionLabel.AutoSize = true;
@@ -164,7 +176,7 @@
             this.InformationNeedButton.Name = "InformationNeedButton";
             this.InformationNeedButton.Size = new System.Drawing.Size(98, 23);
             this.InformationNeedButton.TabIndex = 10;
-            this.InformationNeedButton.Text = "Information need";
+            this.InformationNeedButton.Text = "Input Info Need";
             this.InformationNeedButton.UseVisualStyleBackColor = true;
             this.InformationNeedButton.Click += new System.EventHandler(this.InformationNeedButton_Click);
             // 
@@ -184,18 +196,6 @@
             this.totalresultLabel.Name = "totalresultLabel";
             this.totalresultLabel.Size = new System.Drawing.Size(0, 13);
             this.totalresultLabel.TabIndex = 12;
-            // 
-            // Author
-            // 
-            this.Author.Text = "Author";
-            // 
-            // Bibliographic
-            // 
-            this.Bibliographic.Text = "Bibliographic";
-            // 
-            // Abstract
-            // 
-            this.Abstract.Text = "Abstract";
             // 
             // checkedListBox1
             // 
