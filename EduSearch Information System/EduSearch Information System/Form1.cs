@@ -279,7 +279,15 @@ namespace EduSearch_Information_System
 
         PorterStemmerAlgorithm.PorterStemmer myStemmer; // for Activity 4,5
         System.Collections.Generic.Dictionary<string, int> tokenCount; // for Activity 5
-        public string[] stopWords = { "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with","what" }; // for challange activity
+        public string[] stopWords = { "a", "about", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "alone", "along", "already", "also", "although",
+                                      "always", "am", "among", "amongst", "amount", "an", "and", "another", "any", "anyhow", "anyone", "anything", "anyway", "anywhere", "are",
+                                      "around", "as", "at","back","be", "been", "before", "beforehand", "behind", "being", "below", "beside", "between", "beyond", "both", "bottom", "but", "by",
+                                      "can", "could", "each", "else", "empty", "enough", "etc", "even", "ever", "every", "few", "for", "from", "had", "has", "have", "he", "hence", "her", "here",
+                                      "hereafter", "hereby", "herein", "hereupon", "hers", "herself", "him", "himself", "his", "how", "however", "if", "in", "into", "is", "it", "may", "me",
+                                      "meanwhile", "might", "mine", "much", "must", "my", "myself", "neither", "never", "nevertheless", "next", "no", "nobody", "none", "nor", "not", "nothing", "now", "nowhere",
+                                      "of", "on", "or", "other", "our", "over", "out", "per", "please", "put", "rather", "same", "should", "so", "still", "such", "than", "that", "the", "their", "then", "there",
+                                      "these", "they", "this", "those", "through", "thus","to", "un", "up", "very", "via", "was", "what", "when", "where", "which", "while", "who", "whom", "whose", "why", "will",
+                                      "with", "would", "yet", "you", "your"}; //list of stopwords
 
         public void TextAnalyser()
         {
@@ -287,7 +295,6 @@ namespace EduSearch_Information_System
             tokenCount = new Dictionary<string, int>();
         }
 
-        //Activity 3
         /// <summary>
         /// Convert the  given text into tokens and then splits it into tokens according to whitespace and punctuation. 
         /// </summary>
@@ -321,7 +328,6 @@ namespace EduSearch_Information_System
             }
         }
 
-        //Activity 4
         /// <summary>
         /// Stems an array of tokens
         /// </summary>
@@ -338,119 +344,119 @@ namespace EduSearch_Information_System
             return stems;
         }
 
-        /// <summary>
-        /// Outputs stems to the sceen
-        /// </summary>
-        /// <param name="str">A string of text to be stemmed</param>
-        public void OutputStems(string str)
-        {
-            System.Console.WriteLine("Orginal: \"" + str + "\"");
-            string[] tokens = TokeniseString(str);
-            string[] stems = StemTokens(tokens);
-            Console.WriteLine("Stems: ");
-            foreach (string s in stems)
-            {
-                System.Console.WriteLine(s);
-            }
-        }
+        ///// <summary>
+        ///// Outputs stems to the sceen
+        ///// </summary>
+        ///// <param name="str">A string of text to be stemmed</param>
+        //public void OutputStems(string str)
+        //{
+        //    System.Console.WriteLine("Orginal: \"" + str + "\"");
+        //    string[] tokens = TokeniseString(str);
+        //    string[] stems = StemTokens(tokens);
+        //    Console.WriteLine("Stems: ");
+        //    foreach (string s in stems)
+        //    {
+        //        System.Console.WriteLine(s);
+        //    }
+        //}
 
-        // Activity 5
-        /// <summary>
-        /// Counts the occurrences of a given set of tokens
-        /// </summary>
-        /// <param name="tokens">An array of tokens</param>
-        public void CountOccurrences(string[] tokens)
-        {
-            foreach (string s in tokens)
-            {
-                int count = 0;
-                tokenCount.TryGetValue(s, out count);
-                count = count + 1;
-                tokenCount[s] = count;
-            }
-        }
+        //// Activity 5
+        ///// <summary>
+        ///// Counts the occurrences of a given set of tokens
+        ///// </summary>
+        ///// <param name="tokens">An array of tokens</param>
+        //public void CountOccurrences(string[] tokens)
+        //{
+        //    foreach (string s in tokens)
+        //    {
+        //        int count = 0;
+        //        tokenCount.TryGetValue(s, out count);
+        //        count = count + 1;
+        //        tokenCount[s] = count;
+        //    }
+        //}
 
-        /// <summary>
-        /// Displays the count of tokens to the screen
-        /// </summary>
-        public void DisplayCount()
-        {
-            foreach (var value in tokenCount)
-            {
-                string token = value.Key;
-                int occurrences = value.Value;
+        ///// <summary>
+        ///// Displays the count of tokens to the screen
+        ///// </summary>
+        //public void DisplayCount()
+        //{
+        //    foreach (var value in tokenCount)
+        //    {
+        //        string token = value.Key;
+        //        int occurrences = value.Value;
 
-                System.Console.WriteLine("Token is " + token + " number of occurrences are " + occurrences);
-            }
-        }
+        //        System.Console.WriteLine("Token is " + token + " number of occurrences are " + occurrences);
+        //    }
+        //}
 
-        /// <summary>
-        /// Outputs occurrence count for a given string
-        /// </summary>
-        /// <param name="str">A string of text</param>
-        public void OutputTokenCount(string str)
-        {
-            ResetCount();
-            string[] tokens = TokeniseString(str);
-            string[] stems = StemTokens(tokens);
-            Console.Out.WriteLine("Orginal: " + str);
-            CountOccurrences(stems);
-            DisplayCount();
-        }
-
-
-
-        /// <summary>
-        /// Resets the tokencount to 0
-        /// </summary>
-        public void ResetCount()
-        {
-            tokenCount.Clear();
-        }
+        ///// <summary>
+        ///// Outputs occurrence count for a given string
+        ///// </summary>
+        ///// <param name="str">A string of text</param>
+        //public void OutputTokenCount(string str)
+        //{
+        //    ResetCount();
+        //    string[] tokens = TokeniseString(str);
+        //    string[] stems = StemTokens(tokens);
+        //    Console.Out.WriteLine("Orginal: " + str);
+        //    CountOccurrences(stems);
+        //    DisplayCount();
+        //}
 
 
 
-        // Activity 6
-        /// <summary>
-        /// Saves the token count to a file
-        /// </summary>
-        /// <param name="filename">The filename to save the token count to</param>
-        public void SaveCountToFile(string filename)
-        {
-            System.IO.StreamWriter writer = new System.IO.StreamWriter(filename);
-            foreach (var value in tokenCount)
-            {
-                string token = value.Key;
-                int occurrence = value.Value;
-                writer.WriteLine("Token is " + token + " number of occurrences are " + occurrence);
-            }
-            writer.Flush();
-            writer.Close();
-        }
+        ///// <summary>
+        ///// Resets the tokencount to 0
+        ///// </summary>
+        //public void ResetCount()
+        //{
+        //    tokenCount.Clear();
+        //}
 
 
-        /// <summary>
-        /// Counts the occurrence of stems in a given text file and prints out the results to the screen
-        /// </summary>
-        /// <param name="infilename">The filename to be read in</param>
-        /// <param name="outfilename">The filename to save the statistics</param>
-        public void ProcessText(string infilename, string outfilename)
-        {
-            ResetCount();
-            System.IO.StreamReader reader = new System.IO.StreamReader(infilename);
-            string line = "";
-            while ((line = reader.ReadLine()) != null)
-            {
-                //string text = linel
-                string[] tokens = TokeniseString(line);
-                string[] stems = StemTokens(tokens);
-                CountOccurrences(stems);
-            }
-            reader.Close();
-            DisplayCount();
-            SaveCountToFile(outfilename);
 
-        }
+        //// Activity 6
+        ///// <summary>
+        ///// Saves the token count to a file
+        ///// </summary>
+        ///// <param name="filename">The filename to save the token count to</param>
+        //public void SaveCountToFile(string filename)
+        //{
+        //    System.IO.StreamWriter writer = new System.IO.StreamWriter(filename);
+        //    foreach (var value in tokenCount)
+        //    {
+        //        string token = value.Key;
+        //        int occurrence = value.Value;
+        //        writer.WriteLine("Token is " + token + " number of occurrences are " + occurrence);
+        //    }
+        //    writer.Flush();
+        //    writer.Close();
+        //}
+
+
+        ///// <summary>
+        ///// Counts the occurrence of stems in a given text file and prints out the results to the screen
+        ///// </summary>
+        ///// <param name="infilename">The filename to be read in</param>
+        ///// <param name="outfilename">The filename to save the statistics</param>
+        //public void ProcessText(string infilename, string outfilename)
+        //{
+        //    ResetCount();
+        //    System.IO.StreamReader reader = new System.IO.StreamReader(infilename);
+        //    string line = "";
+        //    while ((line = reader.ReadLine()) != null)
+        //    {
+        //        //string text = linel
+        //        string[] tokens = TokeniseString(line);
+        //        string[] stems = StemTokens(tokens);
+        //        CountOccurrences(stems);
+        //    }
+        //    reader.Close();
+        //    DisplayCount();
+        //    SaveCountToFile(outfilename);
+
+        //}
 
 
         // Challenge Activity
@@ -474,46 +480,46 @@ namespace EduSearch_Information_System
 
 
 
-        /// <summary>
-        /// Outputs the token count without any stopwords
-        /// </summary>
-        /// <param name="strs"></param>
-        public void OutputTokenCountWithoutStopwords(string str)
-        {
-            ResetCount();
+        ///// <summary>
+        ///// Outputs the token count without any stopwords
+        ///// </summary>
+        ///// <param name="strs"></param>
+        //public void OutputTokenCountWithoutStopwords(string str)
+        //{
+        //    ResetCount();
 
-            string[] tokens = TokeniseString(str);
-            string[] tokensNoStop = StopWordFilter(tokens);
-            string[] stems = StemTokens(tokensNoStop);
-            CountOccurrences(stems);
+        //    string[] tokens = TokeniseString(str);
+        //    string[] tokensNoStop = StopWordFilter(tokens);
+        //    string[] stems = StemTokens(tokensNoStop);
+        //    CountOccurrences(stems);
 
-            DisplayCount();
-        }
+        //    DisplayCount();
+        //}
 
 
-        /// <summary>
-        /// Counts the occurrences of stems in a given text file ignoring stop words and prints out the results to the screen
-        /// </summary>
-        /// <param name="infilename">The filename to be read in</param>
-        /// <param name="outfilename">The filename to save the statistics</param>
-        public void ProcessTextNoStopWords(string infilename, string outfilename)
-        {
-            ResetCount();
-            System.IO.StreamReader reader = new System.IO.StreamReader(infilename);
-            string line = "";
-            while ((line = reader.ReadLine()) != null)
-            {
-                //string text = linel
-                string[] tokens = TokeniseString(line);
-                string[] tokensnostop = this.StopWordFilter(tokens);
-                string[] stems = StemTokens(tokensnostop);
-                CountOccurrences(stems);
-            }
-            reader.Close();
-            DisplayCount();
-            SaveCountToFile(outfilename);
+        ///// <summary>
+        ///// Counts the occurrences of stems in a given text file ignoring stop words and prints out the results to the screen
+        ///// </summary>
+        ///// <param name="infilename">The filename to be read in</param>
+        ///// <param name="outfilename">The filename to save the statistics</param>
+        //public void ProcessTextNoStopWords(string infilename, string outfilename)
+        //{
+        //    ResetCount();
+        //    System.IO.StreamReader reader = new System.IO.StreamReader(infilename);
+        //    string line = "";
+        //    while ((line = reader.ReadLine()) != null)
+        //    {
+        //        //string text = linel
+        //        string[] tokens = TokeniseString(line);
+        //        string[] tokensnostop = this.StopWordFilter(tokens);
+        //        string[] stems = StemTokens(tokensnostop);
+        //        CountOccurrences(stems);
+        //    }
+        //    reader.Close();
+        //    DisplayCount();
+        //    SaveCountToFile(outfilename);
 
-        }
+        //}
 
 
 
