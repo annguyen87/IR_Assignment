@@ -9,3 +9,15 @@ c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information S
 c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.pdb
 c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.dll
 c:\users\shini_000\documents\visual studio 2015\Projects\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.pdb
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe.config
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.exe
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.pdb
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.pdb
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.pdb
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csprojResolveAssemblyReference.cache
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Form1.resources
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Properties.Resources.resources
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csproj.GenerateResource.Cache
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.Contrib.Snowball.dll
+C:\Users\n8925909\Desktop\IR_Assignment-thanhan34-patch-1\IR_Assignment-thanhan34-patch-1\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.Contrib.Snowball.pdb

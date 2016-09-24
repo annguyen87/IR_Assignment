@@ -40,10 +40,15 @@
             this.SearchButton = new System.Windows.Forms.Button();
             this.listView = new System.Windows.Forms.ListView();
             this.Rank = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Content = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SearchTimeExcutionLabel = new System.Windows.Forms.Label();
             this.InformationNeedButton = new System.Windows.Forms.Button();
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.totalresultLabel = new System.Windows.Forms.Label();
+            this.Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Bibliographic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Abstract = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // BrowseSourceButton
@@ -99,9 +104,8 @@
             this.TimeExcutionLabel.AutoSize = true;
             this.TimeExcutionLabel.Location = new System.Drawing.Point(628, 46);
             this.TimeExcutionLabel.Name = "TimeExcutionLabel";
-            this.TimeExcutionLabel.Size = new System.Drawing.Size(74, 13);
+            this.TimeExcutionLabel.Size = new System.Drawing.Size(0, 13);
             this.TimeExcutionLabel.TabIndex = 5;
-            this.TimeExcutionLabel.Text = "Time Excution";
             // 
             // SearchBox
             // 
@@ -124,7 +128,10 @@
             // 
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Rank,
-            this.Content});
+            this.Title,
+            this.Author,
+            this.Bibliographic,
+            this.Abstract});
             this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
             this.listView.Location = new System.Drawing.Point(154, 257);
@@ -138,19 +145,18 @@
             // 
             this.Rank.Text = "Rank";
             // 
-            // Content
+            // Title
             // 
-            this.Content.Text = "Content";
-            this.Content.Width = 150;
+            this.Title.Text = "Title";
+            this.Title.Width = 150;
             // 
             // SearchTimeExcutionLabel
             // 
             this.SearchTimeExcutionLabel.AutoSize = true;
             this.SearchTimeExcutionLabel.Location = new System.Drawing.Point(628, 154);
             this.SearchTimeExcutionLabel.Name = "SearchTimeExcutionLabel";
-            this.SearchTimeExcutionLabel.Size = new System.Drawing.Size(74, 13);
+            this.SearchTimeExcutionLabel.Size = new System.Drawing.Size(0, 13);
             this.SearchTimeExcutionLabel.TabIndex = 9;
-            this.SearchTimeExcutionLabel.Text = "Time Excution";
             // 
             // InformationNeedButton
             // 
@@ -171,11 +177,41 @@
             this.checkedListBox.Size = new System.Drawing.Size(462, 139);
             this.checkedListBox.TabIndex = 11;
             // 
+            // totalresultLabel
+            // 
+            this.totalresultLabel.AutoSize = true;
+            this.totalresultLabel.Location = new System.Drawing.Point(628, 269);
+            this.totalresultLabel.Name = "totalresultLabel";
+            this.totalresultLabel.Size = new System.Drawing.Size(0, 13);
+            this.totalresultLabel.TabIndex = 12;
+            // 
+            // Author
+            // 
+            this.Author.Text = "Author";
+            // 
+            // Bibliographic
+            // 
+            this.Bibliographic.Text = "Bibliographic";
+            // 
+            // Abstract
+            // 
+            this.Abstract.Text = "Abstract";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(485, 41);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(8, 4);
+            this.checkedListBox1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 523);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.totalresultLabel);
             this.Controls.Add(this.checkedListBox);
             this.Controls.Add(this.InformationNeedButton);
             this.Controls.Add(this.SearchTimeExcutionLabel);
@@ -209,11 +245,16 @@
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.ColumnHeader Rank;
-        private System.Windows.Forms.ColumnHeader Content;
+        private System.Windows.Forms.ColumnHeader Title;
         private System.Windows.Forms.Label SearchTimeExcutionLabel;
         public System.Windows.Forms.ListView listView;
         private System.Windows.Forms.Button InformationNeedButton;
         private System.Windows.Forms.CheckedListBox checkedListBox;
+        private System.Windows.Forms.Label totalresultLabel;
+        private System.Windows.Forms.ColumnHeader Author;
+        private System.Windows.Forms.ColumnHeader Bibliographic;
+        private System.Windows.Forms.ColumnHeader Abstract;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

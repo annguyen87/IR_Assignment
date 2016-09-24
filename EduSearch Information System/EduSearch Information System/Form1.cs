@@ -101,6 +101,7 @@ using Lucene.Net.Index; //for Index Writer
 using Lucene.Net.Store; //for Directory
 using Lucene.Net.Search; // for IndexSearcher
 using Lucene.Net.QueryParsers;  // for QueryParser
+using Lucene.Net.Analysis.Snowball;
 
 
 
@@ -129,14 +130,19 @@ namespace EduSearch_Information_System
         Lucene.Net.QueryParsers.QueryParser parser;
         public static Lucene.Net.Util.Version VERSION = Lucene.Net.Util.Version.LUCENE_30;
         const string TEXT_FN = "Text";
-        // public Form1 form1;
+        
 
 
         public void LuceneApplication()
         {
             luceneIndexDirectory = null; // Is set in Create Index
-            analyzer = null;  // Is set in CreateAnalyser
+            analyzer = new Lucene.Net.Analysis.WhitespaceAnalyzer();
+            analyzer = new Lucene.Net.Analysis.SimpleAnalyzer();
+            analyzer = new Lucene.Net.Analysis.StopAnalyzer(VERSION);
+            analyzer = new Lucene.Net.Analysis.Standard.StandardAnalyzer(VERSION);
+            analyzer = new Lucene.Net.Analysis.Snowball.SnowballAnalyzer(VERSION, "English");
             writer = null; // Is set in CreateWriter
+
         }
         public void CreateIndex(string indexPath)
         {
@@ -210,8 +216,24 @@ namespace EduSearch_Information_System
             System.Console.WriteLine("Searching for " + querytext);
             querytext = querytext.ToLower();
             Query query = parser.Parse(querytext);
-            TopDocs results = searcher.Search(query, 100);
-            System.Console.WriteLine("Number of results is " + results.TotalHits);
+            TopDocs results = searcher.Search(query, 10);
+            totalresultLabel.Text = "Total number of result is" + (results.TotalHits).ToString();
+           
+            int rank = 0;
+            foreach (ScoreDoc scoreDoc in results.ScoreDocs)
+            {
+                rank++;
+                Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
+                string myFieldValue = doc.Get(TEXT_FN).ToString();
+                
+            }
+
+
+
+
+
+
+
             return results;
 
         }
@@ -224,7 +246,8 @@ namespace EduSearch_Information_System
         /// <param name="results">Search results</param>
         public void DisplayResults(TopDocs results)
         {
-            
+
+            string[] delimiter1 = new string[] { ".I", ".T", ".A", ".B", ".W"," ." };
             int rank = 0;
             foreach (ScoreDoc scoreDoc in results.ScoreDocs)
             {
@@ -232,12 +255,22 @@ namespace EduSearch_Information_System
                 // retrieve the document from the 'ScoreDoc' object
                 Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
                 string myFieldValue = doc.Get(TEXT_FN).ToString();
+                string[] array = myFieldValue.Split(delimiter1, StringSplitOptions.None);
                 ListViewItem item = new ListViewItem(rank.ToString());
-                item.SubItems.Add(myFieldValue);
+                foreach (string entry in array)
+                {
+                    string title = array[2];
+                    string author = array[4];
+                    string bibliographic = array[5];
+                    string firstsentence = array[6];
+                    item.SubItems.Add(title);
+                    item.SubItems.Add(author);
+                    item.SubItems.Add(bibliographic);
+                    item.SubItems.Add(firstsentence);
+                    Console.WriteLine(entry);
+                }
                 listView.Items.Add(item);
-
             }
-
         }
 
 
@@ -246,7 +279,7 @@ namespace EduSearch_Information_System
 
         PorterStemmerAlgorithm.PorterStemmer myStemmer; // for Activity 4,5
         System.Collections.Generic.Dictionary<string, int> tokenCount; // for Activity 5
-        public string[] stopWords = { "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with" }; // for challange activity
+        public string[] stopWords = { "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with","what" }; // for challange activity
 
         public void TextAnalyser()
         {
@@ -544,7 +577,6 @@ namespace EduSearch_Information_System
             SearchBox.Text = finalQuery;
             CreateSearcher();
             CreateParser();
-            SearchIndex(SearchBox.Text);
             DisplayResults(SearchIndex(SearchBox.Text));
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
@@ -555,7 +587,7 @@ namespace EduSearch_Information_System
         {
             OutputTokens(SearchBox.Text);
            
-           // ProcessTextNoStopWords()
+         
         }
     }
 }
