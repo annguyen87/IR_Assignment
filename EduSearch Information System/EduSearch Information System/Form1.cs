@@ -496,10 +496,15 @@ namespace EduSearch_Information_System
                     string author = array[4];
                     string bibliographic = array[5];
                     string firstsentence = array[6];
+                    string fullabstract = "";
+                    for (int i = 6; i < array.Length; i++) { 
+                        fullabstract = fullabstract + array[i] +" .";
+                     }
                     item.SubItems.Add(title);
                     item.SubItems.Add(author);
                     item.SubItems.Add(bibliographic);
                     item.SubItems.Add(firstsentence);
+                    item.SubItems.Add(fullabstract);
                     Console.WriteLine(entry);
                 }
                 listView.Items.Add(item);
@@ -570,8 +575,19 @@ namespace EduSearch_Information_System
         private void InformationNeedButton_Click(object sender, EventArgs e)
         {
             OutputTokens(SearchBox.Text);
-           
-         
+        }
+
+        private void listView_ItemActivate(object sender, EventArgs e)
+        {
+            if (listView.SelectedItems.Count > 0) {
+                ListViewItem item = listView.SelectedItems[0];
+                txtTitle.Text = item.SubItems[1].Text;
+                txtAuthor.Text = item.SubItems[2].Text;
+                txtBib.Text = item.SubItems[3].Text;
+                txtAbs.Text = item.SubItems[5].Text;
+                
+
+            }
         }
     }
 }

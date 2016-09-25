@@ -46,3 +46,14 @@ C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduS
 C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.dll
 C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.pdb
 C:\Users\n8635307\Desktop\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.Contrib.Snowball.pdb
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe.config
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.exe
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.pdb
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.exe
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\EduSearch Information System.pdb
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.pdb
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\bin\Debug\Lucene.Net.Contrib.Snowball.pdb
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csprojResolveAssemblyReference.cache
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Form1.resources
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch_Information_System.Properties.Resources.resources
+C:\Users\shini_000\Desktop\IR_Assignment-master\IR_Assignment-master\EduSearch Information System\EduSearch Information System\obj\Debug\EduSearch Information System.csproj.GenerateResource.Cache
