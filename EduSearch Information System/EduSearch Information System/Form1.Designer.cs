@@ -50,10 +50,18 @@
             this.totalresultLabel = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.cbPagingIndex = new System.Windows.Forms.ComboBox();
+            this.authorlbl = new System.Windows.Forms.Label();
+            this.Titlelbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.txtBib = new System.Windows.Forms.TextBox();
+            this.txtAbs = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
+            //
             // BrowseSourceButton
-            // 
+            //
             this.BrowseSourceButton.Location = new System.Drawing.Point(23, 12);
             this.BrowseSourceButton.Name = "BrowseSourceButton";
             this.BrowseSourceButton.Size = new System.Drawing.Size(98, 23);
@@ -61,9 +69,9 @@
             this.BrowseSourceButton.Text = "Browse Source";
             this.BrowseSourceButton.UseVisualStyleBackColor = true;
             this.BrowseSourceButton.Click += new System.EventHandler(this.BrowseSourceButton_Click);
-            // 
+            //
             // BrowseIndexButton
-            // 
+            //
             this.BrowseIndexButton.Location = new System.Drawing.Point(23, 41);
             this.BrowseIndexButton.Name = "BrowseIndexButton";
             this.BrowseIndexButton.Size = new System.Drawing.Size(98, 23);
@@ -71,9 +79,9 @@
             this.BrowseIndexButton.Text = "Browse Index";
             this.BrowseIndexButton.UseVisualStyleBackColor = true;
             this.BrowseIndexButton.Click += new System.EventHandler(this.BrowseIndexButton_Click);
-            // 
+            //
             // SourcePathLabel
-            // 
+            //
             this.SourcePathLabel.AutoSize = true;
             this.SourcePathLabel.Location = new System.Drawing.Point(151, 17);
             this.SourcePathLabel.Name = "SourcePathLabel";
@@ -81,53 +89,53 @@
             this.SourcePathLabel.TabIndex = 2;
             this.SourcePathLabel.Text = "C:\\Users\\lua\\Desktop\\IR_Assignment-master\\IR_Assignment-master\\collection\\crandoc" +
     "s";
-            // 
+            //
             // IndexPathLabel
-            // 
+            //
             this.IndexPathLabel.AutoSize = true;
             this.IndexPathLabel.Location = new System.Drawing.Point(151, 46);
             this.IndexPathLabel.Name = "IndexPathLabel";
             this.IndexPathLabel.Size = new System.Drawing.Size(413, 13);
             this.IndexPathLabel.TabIndex = 3;
             this.IndexPathLabel.Text = "C:\\Users\\lua\\Desktop\\IR_Assignment-master\\IR_Assignment-master\\collection\\index";
-            // 
+            //
             // CreateIndexButton
-            // 
-            this.CreateIndexButton.Location = new System.Drawing.Point(622, 12);
+            //
+            this.CreateIndexButton.Location = new System.Drawing.Point(497, 7);
             this.CreateIndexButton.Name = "CreateIndexButton";
             this.CreateIndexButton.Size = new System.Drawing.Size(98, 23);
             this.CreateIndexButton.TabIndex = 4;
             this.CreateIndexButton.Text = "Create Index";
             this.CreateIndexButton.UseVisualStyleBackColor = true;
             this.CreateIndexButton.Click += new System.EventHandler(this.CreateIndexButton_Click);
-            // 
+            //
             // TimeExcutionLabel
-            // 
+            //
             this.TimeExcutionLabel.AutoSize = true;
-            this.TimeExcutionLabel.Location = new System.Drawing.Point(628, 46);
+            this.TimeExcutionLabel.Location = new System.Drawing.Point(503, 46);
             this.TimeExcutionLabel.Name = "TimeExcutionLabel";
             this.TimeExcutionLabel.Size = new System.Drawing.Size(0, 13);
             this.TimeExcutionLabel.TabIndex = 5;
-            // 
+            //
             // SearchBox
-            // 
-            this.SearchBox.Location = new System.Drawing.Point(154, 84);
+            //
+            this.SearchBox.Location = new System.Drawing.Point(23, 81);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(463, 20);
             this.SearchBox.TabIndex = 6;
-            // 
+            //
             // SearchButton
-            // 
-            this.SearchButton.Location = new System.Drawing.Point(622, 128);
+            //
+            this.SearchButton.Location = new System.Drawing.Point(497, 107);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(98, 23);
             this.SearchButton.TabIndex = 7;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
+            //
             // listView
-            // 
+            //
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Rank,
             this.Title,
@@ -136,92 +144,166 @@
             this.Abstract});
             this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
-            this.listView.Location = new System.Drawing.Point(154, 257);
+            this.listView.Location = new System.Drawing.Point(23, 257);
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(463, 218);
             this.listView.TabIndex = 8;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
-            // 
+            this.listView.ItemActivate += new System.EventHandler(this.listView_ItemActivate);
+            //
             // Rank
-            // 
+            //
             this.Rank.Text = "Rank";
-            // 
+            //
             // Title
-            // 
+            //
             this.Title.Text = "Title";
             this.Title.Width = 150;
-            // 
+            //
             // Author
-            // 
+            //
             this.Author.Text = "Author";
-            // 
+            //
             // Bibliographic
-            // 
+            //
             this.Bibliographic.Text = "Bibliographic";
-            // 
+            //
             // Abstract
-            // 
+            //
             this.Abstract.Text = "Abstract";
-            // 
+            //
             // SearchTimeExcutionLabel
-            // 
+            //
             this.SearchTimeExcutionLabel.AutoSize = true;
-            this.SearchTimeExcutionLabel.Location = new System.Drawing.Point(628, 154);
+            this.SearchTimeExcutionLabel.Location = new System.Drawing.Point(503, 154);
             this.SearchTimeExcutionLabel.Name = "SearchTimeExcutionLabel";
             this.SearchTimeExcutionLabel.Size = new System.Drawing.Size(0, 13);
             this.SearchTimeExcutionLabel.TabIndex = 9;
-            // 
+            //
             // InformationNeedButton
-            // 
-            this.InformationNeedButton.Location = new System.Drawing.Point(622, 81);
+            //
+            this.InformationNeedButton.Location = new System.Drawing.Point(497, 78);
             this.InformationNeedButton.Name = "InformationNeedButton";
             this.InformationNeedButton.Size = new System.Drawing.Size(98, 23);
             this.InformationNeedButton.TabIndex = 10;
             this.InformationNeedButton.Text = "Input Info Need";
             this.InformationNeedButton.UseVisualStyleBackColor = true;
             this.InformationNeedButton.Click += new System.EventHandler(this.InformationNeedButton_Click);
-            // 
+            //
             // checkedListBox
-            // 
+            //
             this.checkedListBox.CheckOnClick = true;
             this.checkedListBox.FormattingEnabled = true;
-            this.checkedListBox.Location = new System.Drawing.Point(154, 111);
+            this.checkedListBox.Location = new System.Drawing.Point(23, 107);
             this.checkedListBox.Name = "checkedListBox";
             this.checkedListBox.Size = new System.Drawing.Size(462, 139);
             this.checkedListBox.TabIndex = 11;
-            // 
+            //
             // totalresultLabel
-            // 
+            //
             this.totalresultLabel.AutoSize = true;
-            this.totalresultLabel.Location = new System.Drawing.Point(628, 269);
+            this.totalresultLabel.Location = new System.Drawing.Point(494, 269);
             this.totalresultLabel.Name = "totalresultLabel";
             this.totalresultLabel.Size = new System.Drawing.Size(0, 13);
             this.totalresultLabel.TabIndex = 12;
-            // 
+            //
             // checkedListBox1
-            // 
+            //
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(485, 41);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(8, 4);
             this.checkedListBox1.TabIndex = 13;
-            // 
+            //
             // cbPagingIndex
-            // 
+            //
             this.cbPagingIndex.FormattingEnabled = true;
             this.cbPagingIndex.Location = new System.Drawing.Point(495, 481);
             this.cbPagingIndex.Name = "cbPagingIndex";
             this.cbPagingIndex.Size = new System.Drawing.Size(120, 21);
             this.cbPagingIndex.TabIndex = 14;
             this.cbPagingIndex.SelectedIndexChanged += new System.EventHandler(this.cbPagingIndex_SelectedIndexChanged);
-            // 
+            // authorlbl
+            //
+            this.authorlbl.AutoSize = true;
+            this.authorlbl.Location = new System.Drawing.Point(691, 41);
+            this.authorlbl.Name = "authorlbl";
+            this.authorlbl.Size = new System.Drawing.Size(38, 13);
+            this.authorlbl.TabIndex = 14;
+            this.authorlbl.Text = "Author";
+            //
+            // Titlelbl
+            //
+            this.Titlelbl.AutoSize = true;
+            this.Titlelbl.Location = new System.Drawing.Point(691, 17);
+            this.Titlelbl.Name = "Titlelbl";
+            this.Titlelbl.Size = new System.Drawing.Size(27, 13);
+            this.Titlelbl.TabIndex = 15;
+            this.Titlelbl.Text = "Title";
+            //
+            // label3
+            //
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(691, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Abstract";
+            //
+            // label4
+            //
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(691, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Bibliographic";
+            //
+            // txtTitle
+            //
+            this.txtTitle.Location = new System.Drawing.Point(784, 14);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(364, 20);
+            this.txtTitle.TabIndex = 18;
+            //
+            // txtAuthor
+            //
+            this.txtAuthor.Location = new System.Drawing.Point(784, 38);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(364, 20);
+            this.txtAuthor.TabIndex = 19;
+            //
+            // txtBib
+            //
+            this.txtBib.Location = new System.Drawing.Point(784, 71);
+            this.txtBib.Name = "txtBib";
+            this.txtBib.Size = new System.Drawing.Size(364, 20);
+            this.txtBib.TabIndex = 20;
+            //
+            // txtAbs
+            //
+            this.txtAbs.Location = new System.Drawing.Point(784, 117);
+            this.txtAbs.Name = "txtAbs";
+            this.txtAbs.Size = new System.Drawing.Size(364, 182);
+            this.txtAbs.TabIndex = 22;
+            this.txtAbs.Text = "";
+            //
             // Form1
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 523);
             this.Controls.Add(this.cbPagingIndex);
+            this.ClientSize = new System.Drawing.Size(1291, 523);
+            this.Controls.Add(this.txtAbs);
+            this.Controls.Add(this.txtBib);
+            this.Controls.Add(this.txtAuthor);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Titlelbl);
+            this.Controls.Add(this.authorlbl);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.totalresultLabel);
             this.Controls.Add(this.checkedListBox);
@@ -268,6 +350,13 @@
         private System.Windows.Forms.ColumnHeader Abstract;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox cbPagingIndex;
+        private System.Windows.Forms.Label authorlbl;
+        private System.Windows.Forms.Label Titlelbl;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtAuthor;
+        private System.Windows.Forms.TextBox txtBib;
+        private System.Windows.Forms.RichTextBox txtAbs;
     }
 }
-

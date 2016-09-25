@@ -24,13 +24,13 @@ namespace EduSearch_Information_System
         {
             InitializeComponent();
         }
-        
+
         public void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
         LuceneApplication myLuceneapp = new LuceneApplication();
-        
+
 
         private void BrowseSourceButton_Click(object sender, EventArgs e)
         {
@@ -48,14 +48,14 @@ namespace EduSearch_Information_System
         {
             // Calculate time excution
             var watch = System.Diagnostics.Stopwatch.StartNew();
-           
+
             myLuceneapp.CreateIndex(IndexPathLabel.Text);
             myLuceneapp.CreateAnalyser();
-           
+
             List<string> l = new List<string>();
             for (int i = 1; i <= 1400; i++)
             {
-                 string text = System.IO.File.ReadAllText(SourcePathLabel.Text+ @"\"+i+".txt"); 
+                 string text = System.IO.File.ReadAllText(SourcePathLabel.Text+ @"\"+i+".txt");
                  l.Add(@text);
             }
 
@@ -64,7 +64,7 @@ namespace EduSearch_Information_System
                 myLuceneapp.IndexText(s);
             }
            // CleanUp();
-            
+
 
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
@@ -293,7 +293,7 @@ namespace EduSearch_Information_System
         Lucene.Net.QueryParsers.QueryParser parser;
         public static Lucene.Net.Util.Version VERSION = Lucene.Net.Util.Version.LUCENE_30;
         const string TEXT_FN = "Text";
-        
+
         public void LuceneApplication()
         {
             luceneIndexDirectory = null; // Is set in Create Index
@@ -374,7 +374,7 @@ namespace EduSearch_Information_System
             Query query = parser.Parse(querytext);
             TopDocs results = searcher.Search(query, 500);
             totalresultLabel.Text = "Total number of result is " + (results.TotalHits).ToString();
-           
+
             int rank = 0;
             foreach (ScoreDoc scoreDoc in results.ScoreDocs)
             {
@@ -408,7 +408,7 @@ namespace EduSearch_Information_System
         }
 
         /// <summary>
-        /// Convert the  given text into tokens and then splits it into tokens according to whitespace and punctuation. 
+        /// Convert the  given text into tokens and then splits it into tokens according to whitespace and punctuation.
         /// </summary>
         /// <param name="text">Some text</param>
         /// <returns>Lower case tokens</returns>
@@ -485,11 +485,11 @@ namespace EduSearch_Information_System
 
             string[] delimiter1 = new string[] { ".I", ".T", ".A", ".B", ".W", " ." };
             int rank = offset;
-            
+
             //for (ScoreDoc scoreDoc in results.ScoreDocs)
-            for (int i = offset; i < offset + realDisplay; i++)
+            for (int j = offset; j < offset + realDisplay; j++)
             {
-                ScoreDoc scoreDoc = results.ScoreDocs[i];
+                ScoreDoc scoreDoc = results.ScoreDocs[j];
                 rank++;
                 // retrieve the document from the 'ScoreDoc' object
                 Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
@@ -502,10 +502,15 @@ namespace EduSearch_Information_System
                     string author = array[4];
                     string bibliographic = array[5];
                     string firstsentence = array[6];
+                    string fullabstract = "";
+                    for (int i = 6; i < array.Length; i++) {
+                        fullabstract = fullabstract + array[i] +" .";
+                     }
                     item.SubItems.Add(title);
                     item.SubItems.Add(author);
                     item.SubItems.Add(bibliographic);
                     item.SubItems.Add(firstsentence);
+                    item.SubItems.Add(fullabstract);
                     Console.WriteLine(entry);
                 }
                 listView.Items.Add(item);
@@ -589,7 +594,7 @@ namespace EduSearch_Information_System
 
             //calculating paging index
             int numOfPage = (int)Math.Ceiling((double) results.ScoreDocs.Length / (double)maxDisplay);
-            
+
             DisplayResults(results, 0, maxDisplay);
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
@@ -620,6 +625,18 @@ namespace EduSearch_Information_System
         private void cbPagingIndex_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplayResults(results, cbPagingIndex.SelectedIndex, maxDisplay);
+        }
+        
+        private void listView_ItemActivate(object sender, EventArgs e)
+        {
+            if (listView.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView.SelectedItems[0];
+                txtTitle.Text = item.SubItems[1].Text;
+                txtAuthor.Text = item.SubItems[2].Text;
+                txtBib.Text = item.SubItems[3].Text;
+                txtAbs.Text = item.SubItems[5].Text;
+            }
         }
     }
 }
