@@ -49,6 +49,7 @@
             this.checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.totalresultLabel = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.cbPagingIndex = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // BrowseSourceButton
@@ -76,18 +77,19 @@
             this.SourcePathLabel.AutoSize = true;
             this.SourcePathLabel.Location = new System.Drawing.Point(151, 17);
             this.SourcePathLabel.Name = "SourcePathLabel";
-            this.SourcePathLabel.Size = new System.Drawing.Size(66, 13);
+            this.SourcePathLabel.Size = new System.Drawing.Size(432, 13);
             this.SourcePathLabel.TabIndex = 2;
-            this.SourcePathLabel.Text = "Source Path";
+            this.SourcePathLabel.Text = "C:\\Users\\lua\\Desktop\\IR_Assignment-master\\IR_Assignment-master\\collection\\crandoc" +
+    "s";
             // 
             // IndexPathLabel
             // 
             this.IndexPathLabel.AutoSize = true;
             this.IndexPathLabel.Location = new System.Drawing.Point(151, 46);
             this.IndexPathLabel.Name = "IndexPathLabel";
-            this.IndexPathLabel.Size = new System.Drawing.Size(58, 13);
+            this.IndexPathLabel.Size = new System.Drawing.Size(413, 13);
             this.IndexPathLabel.TabIndex = 3;
-            this.IndexPathLabel.Text = "Index Path";
+            this.IndexPathLabel.Text = "C:\\Users\\lua\\Desktop\\IR_Assignment-master\\IR_Assignment-master\\collection\\index";
             // 
             // CreateIndexButton
             // 
@@ -136,7 +138,7 @@
             this.listView.GridLines = true;
             this.listView.Location = new System.Drawing.Point(154, 257);
             this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(463, 254);
+            this.listView.Size = new System.Drawing.Size(463, 218);
             this.listView.TabIndex = 8;
             this.listView.UseCompatibleStateImageBehavior = false;
             this.listView.View = System.Windows.Forms.View.Details;
@@ -205,11 +207,21 @@
             this.checkedListBox1.Size = new System.Drawing.Size(8, 4);
             this.checkedListBox1.TabIndex = 13;
             // 
+            // cbPagingIndex
+            // 
+            this.cbPagingIndex.FormattingEnabled = true;
+            this.cbPagingIndex.Location = new System.Drawing.Point(495, 481);
+            this.cbPagingIndex.Name = "cbPagingIndex";
+            this.cbPagingIndex.Size = new System.Drawing.Size(120, 21);
+            this.cbPagingIndex.TabIndex = 14;
+            this.cbPagingIndex.SelectedIndexChanged += new System.EventHandler(this.cbPagingIndex_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 523);
+            this.Controls.Add(this.cbPagingIndex);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.totalresultLabel);
             this.Controls.Add(this.checkedListBox);
@@ -255,6 +267,7 @@
         private System.Windows.Forms.ColumnHeader Bibliographic;
         private System.Windows.Forms.ColumnHeader Abstract;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.ComboBox cbPagingIndex;
     }
 }
 

@@ -282,9 +282,9 @@ namespace EduSearch_Information_System
 
         }
 
-/// <summary>
-/// Create Index, Create queries (terms and phrases), Submit queries, Display results
-/// </summary>
+        /// <summary>
+        /// Create Index, Create queries (terms and phrases), Submit queries, Display results
+        /// </summary>
 
         Lucene.Net.Store.Directory luceneIndexDirectory;
         Lucene.Net.Analysis.Analyzer analyzer;
@@ -372,8 +372,8 @@ namespace EduSearch_Information_System
             System.Console.WriteLine("Searching for " + querytext);
             querytext = querytext.ToLower();
             Query query = parser.Parse(querytext);
-            TopDocs results = searcher.Search(query, 10);
-            totalresultLabel.Text = "Total number of result is" + (results.TotalHits).ToString();
+            TopDocs results = searcher.Search(query, 500);
+            totalresultLabel.Text = "Total number of result is " + (results.TotalHits).ToString();
            
             int rank = 0;
             foreach (ScoreDoc scoreDoc in results.ScoreDocs)
@@ -386,9 +386,9 @@ namespace EduSearch_Information_System
             return results;
         }
 
-/// <summary>
-/// Pre processing information need
-/// </summary>
+        /// <summary>
+        /// Pre processing information need
+        /// </summary>
         PorterStemmerAlgorithm.PorterStemmer myStemmer;
         System.Collections.Generic.Dictionary<string, int> tokenCount;
         public string[] stopWords = { "a", "about", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "alone", "along", "already", "also", "although",
@@ -477,13 +477,19 @@ namespace EduSearch_Information_System
         /// Outputs results to the screen
         /// </summary>
         /// <param name="results">Search results</param>
-        public void DisplayResults(TopDocs results)
+        public void DisplayResults(TopDocs results, int pagingIndex, int maxDisplay)
         {
+            listView.Items.Clear();
+            int offset = pagingIndex * maxDisplay;
+            int realDisplay = Math.Min(maxDisplay, results.ScoreDocs.Length - offset);
 
             string[] delimiter1 = new string[] { ".I", ".T", ".A", ".B", ".W", " ." };
-            int rank = 0;
-            foreach (ScoreDoc scoreDoc in results.ScoreDocs)
+            int rank = offset;
+            
+            //for (ScoreDoc scoreDoc in results.ScoreDocs)
+            for (int i = offset; i < offset + realDisplay; i++)
             {
+                ScoreDoc scoreDoc = results.ScoreDocs[i];
                 rank++;
                 // retrieve the document from the 'ScoreDoc' object
                 Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
@@ -503,6 +509,17 @@ namespace EduSearch_Information_System
                     Console.WriteLine(entry);
                 }
                 listView.Items.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Update paging footer
+        /// </summary>
+        public void updatePagingFooter(int numOfPage)
+        {
+            for (int i = 1; i <= numOfPage; i++)
+            {
+                cbPagingIndex.Items.Add(i);
             }
         }
 
@@ -550,6 +567,12 @@ namespace EduSearch_Information_System
             CleanUpIndexer();
         }
 
+        /// <summary>
+        /// Store the result of the most recent Search Button click
+        /// </summary>
+        TopDocs results;
+        int maxDisplay = 10;
+
         private void SearchButton_Click(object sender, EventArgs e)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -561,17 +584,42 @@ namespace EduSearch_Information_System
             SearchBox.Text = finalQuery;
             CreateSearcher();
             CreateParser();
-            DisplayResults(SearchIndex(SearchBox.Text));
+            //DisplayResults(SearchIndex(SearchBox.Text));
+            results = SearchIndex(SearchBox.Text);
+
+            //calculating paging index
+            int numOfPage = (int)Math.Ceiling((double) results.ScoreDocs.Length / (double)maxDisplay);
+            
+            DisplayResults(results, 0, maxDisplay);
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
             SearchTimeExcutionLabel.Text = "Search takes " + elapsedMs.ToString() + " milisecond";
+
+            //update paging footer
+            cbPagingIndex.Items.Clear();
+            try
+            {
+                cbPagingIndex.SelectedIndex = 1;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            for (int i = 0; i < numOfPage; i++)
+            {
+                cbPagingIndex.Items.Add("Page " + (i + 1));
+            }
         }
 
         private void InformationNeedButton_Click(object sender, EventArgs e)
         {
+            checkedListBox.Items.Clear();
             OutputTokens(SearchBox.Text);
-           
-         
+        }
+
+        private void cbPagingIndex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayResults(results, cbPagingIndex.SelectedIndex, maxDisplay);
         }
     }
 }
